@@ -9,7 +9,14 @@ const resultingPromise = axios.get(url);
 resultingPromise.then(handleCompletedPromise);
 
 function handleCompletedPromise(resultFromPromise) {
-    for (const episode of resultFromPromise.data) {
-    console.log(episode.name);
-    }
+    resultFromPromise.data.map(episode => {
+        console.log(episode.name);
+    });
 }
+
+// For loop can also be used as alternative to the map method used on function above
+// function handleCompletedPromise(resultFromPromise) {
+//     for (const episode of resultFromPromise.data) {
+//     console.log(episode.name);
+//     }
+// }
